@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Up North Lake Finder</title>
+  <meta name="description" content="Get in touch with the Up North Lake Finder team for questions, feedback, bug reports, or feature requests." />
+  <style>
+    :root {
+      --navy: #0d2244;
+      --navy-deep: #00396f;
+      --gold: #f2b705;
+      --gold-light: #ffc72c;
+      --ink: #0d2244;
+      --muted: #5b6b82;
+      --paper: #ffffff;
+      --mist: #eef3fa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    header.nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 800; color: var(--navy);
+      font-size: 1.05rem; text-decoration: none;
+    }
+    .brand img { width: 40px; height: 40px; border-radius: 9px; }
+    .nav-links a {
+      color: var(--navy); text-decoration: none; font-weight: 600;
+      margin-left: 22px; font-size: 0.95rem;
+    }
+
+    .hero {
+      background: radial-gradient(1000px 420px at 50% -20%, #123564 0%, var(--navy) 60%);
+      color: #fff; text-align: center; padding: 56px 24px 64px;
+    }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; }
+    .hero p { color: #cdd9ec; max-width: 52ch; margin: 0 auto; font-size: 1.1rem; }
+
+    .wrap { max-width: 680px; margin: 0 auto; padding: 56px 24px; }
+    .contact-card {
+      background: var(--mist);
+      border-radius: 18px;
+      padding: 32px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .contact-card .label { color: var(--muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px; }
+    .contact-card a.email {
+      display: inline-block;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--navy-deep);
+      text-decoration: none;
+    }
+    .contact-card a.email:hover { color: var(--gold); }
+    .note { color: var(--muted); font-size: 0.95rem; margin-top: 12px; }
+
+    h2 { font-size: 1.2rem; color: var(--navy); margin: 28px 0 8px; }
+    p.body { color: var(--muted); }
+
+    footer {
+      max-width: 1080px; margin: 0 auto;
+      padding: 32px 24px 48px;
+      display: flex; flex-wrap: wrap; gap: 16px;
+      justify-content: space-between; align-items: center;
+      color: var(--muted); font-size: 0.9rem;
+      border-top: 1px solid #e3eaf3;
+    }
+    footer .foot-links a { color: var(--navy); text-decoration: none; font-weight: 600; margin-left: 18px; }
+    footer .foot-links a:first-child { margin-left: 0; }
+
+    @media (max-width: 780px) { .nav-links { display: none; } .hero h1 { font-size: 1.8rem; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <img src="icon.png" alt="Up North Lake Finder icon" />
+      Up North Lake Finder
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Features</a>
+      <a href="https://bryantmoeller-eng.github.io/privacy-policy/">Privacy</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Contact us</h1>
+    <p>Questions, feedback, bug reports, or feature requests — we'd love to hear from you.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="contact-card">
+      <div class="label">Email</div>
+      <a class="email" href="mailto:bryant.moeller@gmail.com">bryant.moeller@gmail.com</a>
+      <p class="note">We do our best to respond within a few business days.</p>
+    </div>
+
+    <h2>Found a data issue?</h2>
+    <p class="body">
+      Lake survey data comes from the Minnesota DNR LakeFinder dataset. If a lake's information looks
+      incorrect, let us know which lake and we'll take a look — and you can always verify against the
+      official DNR LakeFinder page linked within the app.
+    </p>
+
+    <h2>Support &amp; privacy</h2>
+    <p class="body">
+      See our <a href="https://bryantmoeller-eng.github.io/privacy-policy/support.html">Support page</a>
+      for common questions, or our
+      <a href="https://bryantmoeller-eng.github.io/privacy-policy/">Privacy Policy</a>.
+    </p>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Up North Lake Finder</div>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="https://bryantmoeller-eng.github.io/privacy-policy/">Privacy Policy</a>
+      <a href="https://bryantmoeller-eng.github.io/privacy-policy/support.html">Support</a>
+    </div>
+  </footer>
+</body>
+</html>

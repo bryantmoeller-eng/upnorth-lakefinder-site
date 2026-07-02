@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Up North Lake Finder — Find Minnesota fishing lakes by fish</title>
+  <meta name="description" content="Explore 3,700+ surveyed Minnesota lakes. Filter by fish species and abundance to find your next fishing spot, powered by official Minnesota DNR survey data." />
+  <style>
+    :root {
+      --navy: #0d2244;
+      --navy-deep: #00396f;
+      --gold: #f2b705;
+      --gold-light: #ffc72c;
+      --ink: #0d2244;
+      --muted: #5b6b82;
+      --paper: #ffffff;
+      --mist: #eef3fa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    a { color: var(--navy-deep); }
+
+    /* Header */
+    header.nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 1.05rem;
+      letter-spacing: 0.2px;
+    }
+    .brand img { width: 40px; height: 40px; border-radius: 9px; }
+    .nav-links a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 22px;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover { color: var(--navy-deep); }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(1200px 500px at 50% -10%, #123564 0%, var(--navy) 60%);
+      color: #fff;
+      text-align: center;
+      padding: 64px 24px 80px;
+    }
+    .hero img.app-icon {
+      width: 118px; height: 118px;
+      border-radius: 26px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      line-height: 1.15;
+      font-weight: 800;
+      max-width: 15ch;
+      margin: 0 auto 16px;
+    }
+    .hero h1 .accent { color: var(--gold-light); }
+    .hero p.lede {
+      font-size: 1.15rem;
+      color: #cdd9ec;
+      max-width: 52ch;
+      margin: 0 auto 32px;
+    }
+    .cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 800;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 1rem;
+      transition: transform 0.12s ease, background 0.12s ease;
+    }
+    .cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .cta.secondary {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      margin-left: 10px;
+    }
+    .cta.secondary:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
+
+    /* Features */
+    .features {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 72px 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .card {
+      background: var(--mist);
+      border-radius: 18px;
+      padding: 28px 24px;
+    }
+    .card .ico {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: var(--gold-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .card h3 { font-size: 1.1rem; margin-bottom: 8px; color: var(--navy); }
+    .card p { color: var(--muted); font-size: 0.97rem; }
+
+    /* Strip */
+    .strip {
+      background: var(--navy-deep);
+      color: #fff;
+      text-align: center;
+      padding: 56px 24px;
+    }
+    .strip h2 { font-size: 1.8rem; margin-bottom: 12px; }
+    .strip p { color: #cdd9ec; max-width: 54ch; margin: 0 auto 26px; }
+
+    /* Footer */
+    footer {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 40px 24px 56px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer .foot-links a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 18px;
+    }
+    footer .foot-links a:first-child { margin-left: 0; }
+    .disclaimer {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      color: #9aa8bc;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 780px) {
+      .features { grid-template-columns: 1fr; padding: 48px 24px; }
+      .hero h1 { font-size: 2.1rem; }
+      .nav-links { display: none; }
+      .cta.secondary { margin-left: 0; margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <img src="icon.png" alt="Up North Lake Finder icon" />
+      Up North Lake Finder
+    </div>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://bryantmoeller-eng.github.io/privacy-policy/">Privacy</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img class="app-icon" src="icon.png" alt="Up North Lake Finder app icon" />
+    <h1>Find your next <span class="accent">Minnesota</span> fishing lake</h1>
+    <p class="lede">
+      Search 3,700+ surveyed Minnesota lakes by fish species and abundance —
+      powered by official Minnesota DNR survey data, right in your pocket.
+    </p>
+    <a class="cta" href="contact.html">Get in touch</a>
+    <a class="cta secondary" href="#features">See features</a>
+  </section>
+
+  <section class="features" id="features">
+    <div class="card">
+      <div class="ico">&#9873;</div>
+      <h3>Filter by what matters</h3>
+      <p>Search by species — walleye, pike, bass, panfish, trout and more — and set a minimum abundance so you only see lakes where the fish are truly plentiful.</p>
+    </div>
+    <div class="card">
+      <div class="ico">&#9678;</div>
+      <h3>Real DNR survey data</h3>
+      <p>Every lake is backed by official Minnesota DNR fisheries surveys. Abundance ratings are color-coded so you can read them at a glance.</p>
+    </div>
+    <div class="card">
+      <div class="ico">&#9662;</div>
+      <h3>Deep lake details</h3>
+      <p>Species lists, survey history, catch rates, depth, shoreline, public access, and ice-in / ice-out dates for every lake.</p>
+    </div>
+  </section>
+
+  <section class="strip">
+    <h2>Built for up north</h2>
+    <p>All lake data is stored on your device, so you can browse lakes even at the cabin with no signal. Plan smarter. Fish better.</p>
+    <a class="cta" href="contact.html">Contact us</a>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Up North Lake Finder</div>
+    <div class="foot-links">
+      <a href="contact.html">Contact</a>
+      <a href="https://bryantmoeller-eng.github.io/privacy-policy/">Privacy Policy</a>
+      <a href="https://bryantmoeller-eng.github.io/privacy-policy/support.html">Support</a>
+    </div>
+  </footer>
+
+  <p class="disclaimer">
+    Fish survey data is sourced from the Minnesota Department of Natural Resources (MNDNR) LakeFinder dataset and is used under the MNDNR General Data &amp; Software License Agreement. Data &copy; Minnesota DNR. Up North Lake Finder is not affiliated with or endorsed by the Minnesota DNR. Information is provided for reference only and should not be used for navigation or to determine legal boundaries or access.
+  </p>
+</body>
+</html>
